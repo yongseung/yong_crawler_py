@@ -8,6 +8,7 @@ import urllib.robotparser as rb
 import re
 import os
 import sqlite3
+import csv
 
 abc = 500
 
@@ -20,6 +21,8 @@ mainpath = './mymydata/'
 print(
     rb.RobotFileParser().can_fetch("*", "http://blog.daum.net/robots.txt")
     , " yogo")
+
+
 
 
 def getContent(url, delay=0):
@@ -137,7 +140,7 @@ def parseArticle(url):
 
     if newURL:
         try:
-            #blog 디렉터리를 만듭니다.
+            #blog 디렉터리를 만듭니다.`
             os.mkdir(mainpath+blog_id)
             print("make dir")
         except:
@@ -233,55 +236,116 @@ class DB:
 
 db = DB()
 
-
-
 if __name__ == '__main__':
     print('starting crawl...')
-    #check mainpage
-   # print(contents)
-    #URLs = getArticleInfo(BeautifulSoup(contents))
-
-    cnt = 1010
+    cnt = 10200
     mainpage = "https://www.rocketpunch.com/jobs/"
 
-    mainurl = mainpage
+    mainurl = mainpage+str(cnt)
 
-    fTXT = open(mainpath +'rpunch' +'.txt', 'w', encoding='utf-8')
+  #  fTXT = open(mainpath +'rpunch' +'.txt', 'w', encoding='utf-8')
 
-    fTXT.write('hi')
+    contents = urllib.request.urlopen(mainurl)
+    soup = BeautifulSoup(contents)
+
+    csv_file = open('rpunch.csv','w')
+    cw = csv.writer(csv_file,  delimiter=',')
+
+    y=10
+    if (lambda y: y)(y) :
+        print(y)
+
+    total = []
+    pat_money = re.compile(r'.*만원')
+    pat_last = re.compile(r'.*채용 페이지')
     while True:
         try:
-            if cnt > 1020 :
-                print('break')
-                break
-
-            cnt = cnt +1
-            print(cnt)
+            cnt += 1
             mainurl = mainpage + str(cnt)
-            contents = getContent(mainurl)
+            print(cnt)
+            contents = urllib.request.urlopen(mainurl)
             soup = BeautifulSoup(contents)
-            panel = soup.find_all('div', attrs={'class': 'panel-body'})[0].text
-            print('\n' * 5)
-            #print(panel)
-            fTXT.write(panel)
-            fTXT.write('\n fffffffffffffffffffffffff \n')
+            pannel = soup.find_all('div' , attrs={'class':'wrap_wide'})
+            date = soup.find_all('p', attrs={'class':'p date'},text=True)[0].text
+            inform = pannel[2].find_all(text=True)
+            temp = []
+            temp.append(date)
+            #print(pannel[2].find_all(text=True))
+            for summary in inform:
 
+                if summary == "채용 삭제":
+                    print("yoyo")
+                    break
+                elif bool(pat_last.findall(summary)):
+                    print("lambda")
+                    break
+                elif bool(pat_money.findall(summary)):
+                    temp.append(summary)
+                    break
+                temp.append(summary)
 
+            print(temp)
+
+            skills = []
             for ultag in soup.find_all('ul', attrs={'class': 'list-unstyled list-tags'}):
                 for litag in ultag.find_all('li'):
-                    print(litag.text)
-                    fTXT.write(litag.text)
+                    skills.append(litag.text)
 
-            fTXT.write('ss \n ss')
+            if len(skills):
+                print("skill upgrade")
+                temp.append(skills)
 
+            cw.writerow(temp)
 
-
-
+            if cnt >10230:
+                break
         except:
+            cnt= cnt+1
             pass
 
 
-    fTXT.close()
+    csv_file.close()
+
+
+            #    print(pannel[1])
+ #   print(pannel[2])
+
+    # fTXT.write('hi')
+    # while True:
+    #     try:
+    #         if cnt > 1020 :
+    #             print('break')
+    #             break
+    #
+    #         cnt = cnt +1
+    #         print(cnt)
+    #         mainurl = mainpage + str(cnt)
+    #         contents = getContent(mainurl)
+    #         soup = BeautifulSoup(contents)
+    #         # panel = soup.find_all('section', attrs={'class': 'panel-body'})[0].text
+    #         panel = soup.find_all('section')['section_infoset'][0].text
+    #
+    #         print(panel)
+    #         #print(panel)
+    #         fTXT.write(panel)
+    #         fTXT.write('\n fffffffffffffffffffffffff \n')
+    #
+    #
+    #         for ultag in soup.find_all('ul', attrs={'class': 'list-unstyled list-tags'}):
+    #             for litag in ultag.find_all('li'):
+    #                 print(litag.text)
+    #                 fTXT.write(litag.text)
+    #
+    #         fTXT.write('ss \n ss')
+    #
+    #
+    #
+    #
+    #     except:
+    #         pass
+    #
+    #
+    # fTXT.close()
 
     #
     # nSuccess = 0
