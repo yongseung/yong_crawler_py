@@ -58,7 +58,6 @@ def login(id, pwd):
     if error:
         print("check your id(email) and password\m program is fail")
         sys.exit()
-        print("종료 후에 나오니")
 
     return page
 
