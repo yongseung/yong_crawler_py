@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b350e45-3dcc-491e-b12b-e9ed16b4bc5f" name="Default" comment="동시에 2">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jbplanet.csv" afterPath="$PROJECT_DIR$/jbplanet.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jbplanet.py" afterPath="$PROJECT_DIR$/jbplanet.py" />
     </list>
     <list id="d318a038-00b7-4d44-ab2d-3c6693eb3e07" name="New changelist" comment="ww" />
     <ignored path="myProject.iws" />
@@ -51,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jbplanet.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jbplanet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jbplanet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="266">
+              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
               <folding>
                 <element signature="e#18#39#0" expanded="true" />
               </folding>
@@ -70,13 +71,6 @@
               <caret line="102" column="40" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jbplanet.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jbplanet.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -137,8 +131,8 @@
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/bakup.py" />
-        <option value="$PROJECT_DIR$/jbplanet.py" />
         <option value="$PROJECT_DIR$/rpunch.csv" />
+        <option value="$PROJECT_DIR$/jbplanet.py" />
       </list>
     </option>
   </component>
@@ -755,16 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbplanet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#18#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rpunch.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19">
@@ -776,6 +760,16 @@
     <entry file="file://$PROJECT_DIR$/jbplanet.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbplanet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+          <folding>
+            <element signature="e#18#39#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

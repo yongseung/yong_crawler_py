@@ -76,10 +76,11 @@ def get(lp, page = 3):
         jp = br.get(url+str(eachPage))
         each = jp.soup.find_all(('div'), attrs={'class': 'result_unit_info'})
 
-        myObj.clear()
 
-        try:
-            for i in each:
+        for i in each:
+            myObj.clear()
+            try:
+
                 if i.find('span').text != '' :
                     myObj.untill = i.find('span').text
 
@@ -102,9 +103,9 @@ def get(lp, page = 3):
                 #myObj.print()
                 cw.writerow(myObj.basic)
 
-        except:
-            print("except occur by incoding probleme")
-            pass
+            except:
+                print("except occur by incoding probleme")
+                pass
 
 
     csv_file.close()
