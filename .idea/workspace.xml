@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b350e45-3dcc-491e-b12b-e9ed16b4bc5f" name="Default" comment="test in pyCharm">
+    <list default="true" id="4b350e45-3dcc-491e-b12b-e9ed16b4bc5f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="d318a038-00b7-4d44-ab2d-3c6693eb3e07" name="New changelist" comment="ww" />
@@ -404,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461650291253</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test  workspace">
+      <created>1461650926447</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1461650926447</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -475,7 +482,8 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="test in pyCharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="test in pyCharm" />
+    <MESSAGE value="test  workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="test  workspace" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
