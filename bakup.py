@@ -12,17 +12,9 @@ import csv
 
 abc = 500
 
-
-
 crawler_name = "my_crawler"
 mainpage = "https://www.rocketpunch.com/jobs/9505"
 mainpath = './mymydata/'
-
-print(
-    rb.RobotFileParser().can_fetch("*", "http://blog.daum.net/robots.txt")
-    , " yogo")
-
-
 
 
 def getContent(url, delay=0):
@@ -303,67 +295,4 @@ if __name__ == '__main__':
             cnt= cnt+1
             pass
 
-
     csv_file.close()
-
-
-            #    print(pannel[1])
- #   print(pannel[2])
-
-    # fTXT.write('hi')
-    # while True:
-    #     try:
-    #         if cnt > 1020 :
-    #             print('break')
-    #             break
-    #
-    #         cnt = cnt +1
-    #         print(cnt)
-    #         mainurl = mainpage + str(cnt)
-    #         contents = getContent(mainurl)
-    #         soup = BeautifulSoup(contents)
-    #         # panel = soup.find_all('section', attrs={'class': 'panel-body'})[0].text
-    #         panel = soup.find_all('section')['section_infoset'][0].text
-    #
-    #         print(panel)
-    #         #print(panel)
-    #         fTXT.write(panel)
-    #         fTXT.write('\n fffffffffffffffffffffffff \n')
-    #
-    #
-    #         for ultag in soup.find_all('ul', attrs={'class': 'list-unstyled list-tags'}):
-    #             for litag in ultag.find_all('li'):
-    #                 print(litag.text)
-    #                 fTXT.write(litag.text)
-    #
-    #         fTXT.write('ss \n ss')
-    #
-    #
-    #
-    #
-    #     except:
-    #         pass
-    #
-    #
-    # fTXT.close()
-
-    #
-    # nSuccess = 0
-    #
-    # #  print("main",URLs)
-    # URLs = mainpage
-    #
-    # for u in URLs:
-    #     nSuccess += db.insertURL(u)
-    #     print(u)
-    # print('inserted %d new page.'%nSuccess)
-    #
-    # while True:
-    #     for u in db.selectUncrawledURL():
-    #         print('downloading %s'%(u))
-    #         try:
-    #             parseArticle(u)
-    #
-    #         except:
-    #             traceback.print_exc()
-    #             db.updateURL(u, -1)
